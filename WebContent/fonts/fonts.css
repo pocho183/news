@@ -1,0 +1,41 @@
+/*-------------- Font family ----------------------*/
+
+/* Title */
+
+@font-face{ 
+	font-family: 'Montague';
+	src: url('montague.woff') format('woff'),
+	     url('montague.woff2') format('woff2');
+}
+
+/* Head title */
+
+@font-face{ 
+	font-family: 'Quikhand';
+	src: url('quikhand.woff') format('woff'),
+	     url('quikhand.woff2') format('woff2');
+}
+
+/* Subhead title */
+
+@font-face{ 
+	font-family: 'Architex';
+	src: url('architex.woff') format('woff'),
+	     url('architex.woff2') format('woff2');
+}
+
+/* Content title */
+
+@font-face{ 
+	font-family: 'Playfairdisplay';
+	src: url('playfairdisplay.woff') format('woff'),
+	     url('playfairdisplay.woff2') format('woff2');
+}
+
+/* Sign article */
+
+@font-face{ 
+	font-family: 'Sallita';
+	src: url('sallita.woff') format('woff'),
+	     url('sallita.woff2') format('woff2');
+}

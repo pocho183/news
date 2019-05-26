@@ -1,0 +1,73 @@
+// Apply the java-library plugin to add support for Java Library
+//apply plugin: 'java-library'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+def environment = hasProperty('env') ? env : 'Test'
+
+ext.extProgram = new Properties()
+extProgram.load(file("etc/$environment/specific.properties").newReader())
+
+// In this section you declare where to find the dependencies of your project
+
+repositories {
+	mavenCentral()
+	flatDir {
+       dirs 'utils'
+   }
+}
+
+eclipse {
+	project {
+		name = 'news'
+	}
+	wtp {
+		component {
+			resource deployPath: '/', sourcePath: 'WebContent'
+		}
+		facet {
+			facet name:'java', version:'1.8'	
+			/* Bug di Gradle non riconosce la versione 3.1, ma la fissava a 2.4 */
+			facet name:'jst.web', version:'3.1'
+			def oldJstWebFacet = facets.findAll {
+                it.name == 'jst.web' && it.version == '2.4'
+            }
+            facets.removeAll(oldJstWebFacet)
+		}
+	}
+}
+
+war {
+    // Define the context root
+	baseName "/"
+	from "WebContent"
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDir "etc/$environment"
+		}
+	}
+}
+
+dependencies {
+
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.3'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'  
+	compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25' 
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.7.RELEASE'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.8'
+    compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.6.4'
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.7.RELEASE'
+	compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.1.RELEASE'
+	compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+	
+}
