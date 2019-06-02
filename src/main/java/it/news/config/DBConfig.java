@@ -1,6 +1,7 @@
 package it.news.config;
 
 import java.util.Properties;
+import java.util.logging.Level;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.spi.PersistenceProvider;
@@ -43,17 +44,17 @@ public class DBConfig {
 		}
 
 		@Bean
+		public LoadTimeWeaver loadTimeWeaver() throws Throwable {
+			LoadTimeWeaver loadTimeWeaver = new DefaultContextLoadTimeWeaver();
+			return loadTimeWeaver;
+		}
+		
+		@Bean
 		@Autowired
 		public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 			JpaTransactionManager txManager = new JpaTransactionManager();
 			txManager.setEntityManagerFactory(entityManagerFactory);
 			return txManager;
-		}
-		
-		@Bean
-		public LoadTimeWeaver loadTimeWeaver() throws Throwable {
-			LoadTimeWeaver loadTimeWeaver = new DefaultContextLoadTimeWeaver();
-			return loadTimeWeaver;
 		}
 
 		@Bean

@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import it.news.model.ArticleModel;
 import it.news.model.NumberModel;
@@ -32,7 +36,7 @@ public class DispatcherWeb {
 	public String load () {
 		return "home.html";
 	}
-
+	
 	@RequestMapping(value = "/readVolumeAndNumber", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "*")
 	public ResponseEntity<VolumeAndNumber> readVolumeAndNumber() {

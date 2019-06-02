@@ -57,9 +57,11 @@ body {
 	font-family: 'Quikhand', serif;
     font-weight: 700;
     font-style: italic;
-    font-size: 34px;
+    font-size: 36px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
+    line-height: 1.2;
+    word-spacing:-1px;
 }
 
 .subheadline  {
@@ -69,6 +71,8 @@ body {
     font-size: 20px;
     box-sizing: border-box;
     padding: 10px 0px 10px 0px;
+    line-height: 1.2;
+    word-spacing:-1px;
 }
 
 .content{
@@ -97,6 +101,8 @@ body {
     -moz-hyphens: auto;
     hyphens: auto;
 	border-right: 1px solid #2f2f2f;
+	text-align: justify;
+	word-spacing:-3px;
 }
 
 .collumn .subheadline:before {
@@ -116,6 +122,10 @@ body {
     height: 0px;
     display: block;
     margin: 0 auto;
+}
+
+.collumn .figcaption {
+	word-spacing:-1px;
 }
 
 .buttons {

@@ -2,6 +2,8 @@ package it.news.config;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,6 +19,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan({ "it.news.controller", "it.news.service", "it.news.data" })
 public class WebConfig extends WebMvcConfigurerAdapter {
 	
+	private Logger logger = LoggerFactory.getLogger(WebConfig.class);
+	
 	@Autowired
 	Environment env;
 	
@@ -31,8 +35,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		
 		// External folder of the project, http:localhost:8080/images/picture.png
-		//logger.info("Path of external sources: [" + env.getProperty("images") + "]");
-		//registry.addResourceHandler("/images/**").addResourceLocations(env.getProperty("images"));
+		logger.info("Path of external sources: [" + env.getProperty("images") + "]");
+		registry.addResourceHandler("/images/**").addResourceLocations(env.getProperty("path.images"));
 		// Internal sources
 		registry.addResourceHandler("**.css").addResourceLocations("/css/").setCachePeriod(86400);
 		registry.addResourceHandler("**.html").addResourceLocations("/html/").setCachePeriod(86400);

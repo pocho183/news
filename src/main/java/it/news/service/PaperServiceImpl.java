@@ -97,7 +97,7 @@ public class PaperServiceImpl implements PaperService {
 	@Override
 	public String deleteImage(String namePicture) {
 		
-		String path = (env.getProperty("path.images") + "\\" + namePicture).replace("\"","");	
+		String path = env.getProperty("path.images") + "\\" + namePicture;	
         File file = new File(path);
         if(file.delete()){
             logger.debug("The file " + namePicture + " has been deleted with success !");

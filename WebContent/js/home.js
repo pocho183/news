@@ -36,6 +36,7 @@ $( document ).ready(function() {
 	$("#navPublishTurnManager").hide();
 	
 	readVolumeAndNumber();
+	
 });
 
 /********************************* ARTICLE 1 ***************************/
@@ -562,7 +563,7 @@ $("#images").on('click','.btnView',function(){
     var currentRow=$(this).closest("tr");
     var namePicture=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
     // Preview
-    $("img#previewImage").attr("src", 'img/' + namePicture);
+    $("img#previewImage").attr("src", 'images/' + namePicture);
 });
 
 /* Delete Images */
@@ -578,7 +579,7 @@ $("#images").on('click','.btnDelete',function(){
     	    type : 'POST',
     	    dataType: 'json',
     	    contentType : 'application/json',
-    	    data : JSON.stringify(namePicture)
+    	    data : namePicture
         }).done(function(response, data) {
         });
     }); 
