@@ -2,7 +2,6 @@ package it.news.config;
 
 import javax.servlet.Filter;
 import javax.servlet.ServletRegistration.Dynamic;
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -17,7 +16,7 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { WebConfig.class, DBConfig.class };
+		return new Class<?>[] { WebConfig.class, DBConfig.class, SecurityConfig.class };
 	}
 
 	@Override
