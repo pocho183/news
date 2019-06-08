@@ -354,3 +354,22 @@ function readNewspaper(volume, numero) {
 		}
     });
 }
+
+/* Call Login */
+$("#btnLogin").click(function(){
+	
+	var obj = {
+		'username' : $('#inputEmail').text(),
+		'password' : $('#inputPassword').text()
+	};
+	
+	 $.ajax({
+		    url : 'login',
+		    type : 'POST',
+		    dataType: 'json',
+		    contentType : 'application/json',
+		    data : JSON.stringify(obj)
+	    }).done(function(response, data) {			
+	    	console.log(JSON.stringify(response));
+	    });
+});
