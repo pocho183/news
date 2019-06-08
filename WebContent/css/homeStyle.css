@@ -76,12 +76,12 @@ body {
 }
 
 .content{
-    font-size: 0;
-    line-height: 0;
+    /*font-size: 0;
+    line-height: 0;*/
     word-spacing: -.31em;
     display: inline-block;
-    margin: 30px 2% 0 2%;
-	margin-top:0px;
+    margin: 0% 0% 0 0%;
+	/*margin-top:0px;*/
 }
 
 .collumn {
@@ -91,9 +91,10 @@ body {
     font-size: 15px;
     line-height: 20px;
 	color: black;
-    padding: 2% 4% 2% 1%;
+	/*margin: 0% 5% 0% 0%;*/
+    padding: 0 2% 0 0;
     vertical-align: top;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     -webkit-transition: all .7s;
     transition: all .7s;
     word-wrap:break-word;
@@ -157,10 +158,15 @@ body {
 
 /* FIGURE */
 
+img {
+	margin-top:4px;
+	width: 100%;
+}
+/*
 .collumn .figure{
 	margin: 0 0 20px;
 	width: 100%;
-}
+}*/
 
 .collumn .figcaption {
 	font-style: italic;
