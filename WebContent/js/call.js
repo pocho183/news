@@ -12,16 +12,16 @@ function readVolumeAndNumber() {
 	    contentType : 'application/json',
 	}) .done(function(response) {
 		
-	    	volume = response.volume;
-	    	number = response.number;
+    	volume = response.volume;
+    	number = response.number;
 
-	    	/* Read article published */
-	    	$('.volume').text(volume);
-	    	$('.number').text(number);
+    	/* Read article published */
+    	$('.volume').text(volume);
+    	$('.number').text(number);
 
-	    	/* Read the article according number and volume */
-	    	readNewspaper($('.volume').text(), $('.number').text());
-	    });
+    	/* Read the article according number and volume */
+    	readNewspaper($('.volume').text(), $('.number').text());
+	});
 }
 
 
@@ -37,8 +37,7 @@ function readNewspaper(volume, numero) {
 	    dataType: 'json',
 	    contentType : 'application/json',
 	    data : JSON.stringify(shortObj)
-    }).done(function(response, data) {			
-    	//console.log(JSON.stringify(response));    	
+    }).done(function(response, data) {			  	
 		$.each(response, function (i, item) {
 		    for (var i in item) {
 		        var article = JSON.stringify(item.article);
@@ -359,17 +358,42 @@ function readNewspaper(volume, numero) {
 $("#btnLogin").click(function(){
 	
 	var obj = {
-		'username' : $('#inputEmail').text(),
-		'password' : $('#inputPassword').text()
+		'username' : $('#inputEmail').val(),
+		'password' : $('#inputPassword').val()
 	};
 	
-	 $.ajax({
-		    url : 'login',
-		    type : 'POST',
-		    dataType: 'json',
-		    contentType : 'application/json',
-		    data : JSON.stringify(obj)
-	    }).done(function(response, data) {			
-	    	console.log(JSON.stringify(response));
-	    });
+	$.ajax({
+	    url : 'postLogin',
+	    type : 'POST',
+	    dataType: 'json',
+	    contentType : 'application/json',
+	    data : JSON.stringify(obj),
+	    
+	    
+	    success: function (response, data) {
+	    	/* With path, we declare which page is the owner of the token */
+			document.cookie = "token=" + data.token + "; path=/";
+			/* Redirect to home page */
+			window.location.href = "/";
+	      },
+	      error: function (xhr, ajaxOptions, thrownError) {
+	    	  //$('#errorLogin').css('dispaly','block');
+	    	  $('#errorLogin').show();
+	      }
+
+	/*
+	  })
+	  */
+	      /*
+	.done(function(data){
+		/* With path, we declare which page is the owner of the token 
+		document.cookie = "token=" + data.token + "; path=/";
+		/* Redirect to home page
+		window.location.href = "/";
+	})
+	.fail(function(errMsg) {
+  		$("errorLogin").css("dispaly","block");
+	    */
+	});
 });
+

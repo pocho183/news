@@ -66,7 +66,7 @@ public class DispatcherWeb {
 	public ResponseEntity<Object> publish(@RequestBody VolumeAndNumber obj) {
 		logger.debug("Called Publish");
 		service.publish(obj);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<Object>(null, HttpStatus.OK);
     }
 	
 	@RequestMapping(value = "/listImages", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

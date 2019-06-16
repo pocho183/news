@@ -17,6 +17,8 @@ public class SSOUserEntity {
 	@Column(columnDefinition = "BIGINT")
 	public Long applicationId;
 	@Column(columnDefinition = "TEXT")
+	public String authorities;
+	@Column(columnDefinition = "TEXT")
 	public String username;
 	@Column(columnDefinition = "TEXT")
 	public String password;
@@ -61,6 +63,12 @@ public class SSOUserEntity {
 	}
 	public void setSurname(String surname) {
 		this.surname = surname;
+	}
+	public String getAuthorities() {
+		return authorities;
+	}
+	public void setAuthorities(String authorities) {
+		this.authorities = authorities;
 	}
 	public String getEmail() {
 		return email;

@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -12,12 +14,15 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.TextCodec;
+import it.news.controller.SecurityController;
 import it.news.security.model.Account;
 import it.news.security.model.User;
 
 @Component
 public class TokenHelper {
 
+	private Logger logger = LoggerFactory.getLogger(TokenHelper.class);
+	
 	@Value("${app.name}")
 	private String APP_NAME;
 	@Value("${jwt.secret}")
@@ -45,7 +50,16 @@ public class TokenHelper {
 	public String createToken(User user) {
 		Map<String, Object> claims = new HashMap<String, Object>();
 		claims.put("user", user);
-		return Jwts.builder().setIssuer(APP_NAME).setSubject(user.getUsername()).addClaims(claims).setIssuedAt(generateCurrentDate()).setExpiration(generateExpirationDate()).signWith(SIGNATURE_ALGORITHM, TextCodec.BASE64.encode(SECRET)).compact();
+		logger.debug("Creating token ...................................................");
+		try {
+		String w = Jwts.builder().addClaims(claims).compact();
+		logger.debug("CREATED token ................................................... " + w);
+		return w;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			return "error";
+		}
+		//return Jwts.builder().setIssuer(APP_NAME).setSubject(user.getUsername()).addClaims(claims).setIssuedAt(generateCurrentDate()).setExpiration(generateExpirationDate()).signWith(SIGNATURE_ALGORITHM, TextCodec.BASE64.encode(SECRET)).compact();
 	}
 
 	public Claims getClaimsFromToken(String token) {

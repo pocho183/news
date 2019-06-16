@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="logo.png">
-    <title>SERIE BI Sign-in</title>
+    <link rel="icon" href="/img/logo.png">
+    <title>NEWS Sign-in</title>
+    <style>
+		#errorLogin { display:none; }
+	</style>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -17,7 +20,7 @@
   <body class="text-center container">
     <form class="form-signin">
       <img class="mb-4" src="img/logo.png" alt="" width="82" height="72">
-      <h1 class="h1 mb-3 font-weight-normal news-title">Serie Bi</h1>
+      <h1 class="h1 mb-3 font-weight-normal login-title">NEWS</h1>
 	  <h4 class="sign-in">Please sign in</h4>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
@@ -28,7 +31,8 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button id="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <div id="errorLogin">LOGIN FAILED</div>
+      <a id="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</a>
 	  <footer class="text-muted">
       <div class="container">
         <p class="center">
@@ -38,5 +42,8 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
     </footer>
     </form>
+    <script src="jquery-3.2.1.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+    <script src="call.js"></script>
   </body>
 </html>

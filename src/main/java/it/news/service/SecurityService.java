@@ -1,10 +1,14 @@
 package it.news.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
+
+import it.news.controller.SecurityController;
 import it.news.domain.SSOUserEntity;
 import it.news.repository.SSOUserRepository;
 import it.news.security.model.User;
@@ -12,8 +16,8 @@ import it.news.security.model.User;
 @Service
 public class SecurityService implements UserDetailsService {
 	
-	@Value(value = "${camerassoHost:nothing}")
-	private String cameraSSO;
+	private Logger logger = LoggerFactory.getLogger(SecurityService.class);
+	
 	@Value(value = "${app.code}")
 	private String applicationCode;
 //	@Autowired
@@ -33,7 +37,7 @@ public class SecurityService implements UserDetailsService {
 			remoteUser.setEmail(credentials.getEmail());
 			return createUser(remoteUser);
 		} catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Login not authorized !");
 		}
 		return null;
 	}

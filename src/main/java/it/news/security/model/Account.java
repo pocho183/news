@@ -10,13 +10,6 @@ public class Account implements UserDetails {
 	private String username;
 	private String password;
 	private String authorities;
-	
-	public Account(String username, String password, String authorities) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.authorities = authorities;
-	}
 
 	public String getUsername() {
 		return username;

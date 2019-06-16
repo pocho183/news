@@ -75,13 +75,16 @@ body {
     word-spacing:-1px;
 }
 
+.overridePadding {
+	paddig-right: 0px !important;
+}
+
 .content{
     /*font-size: 0;
     line-height: 0;*/
     word-spacing: -.31em;
     display: inline-block;
-    margin: 0% 0% 0 0%;
-	/*margin-top:0px;*/
+   /* margin-rigt:5px;*/
 }
 
 .collumn {
@@ -91,8 +94,7 @@ body {
     font-size: 15px;
     line-height: 20px;
 	color: black;
-	/*margin: 0% 5% 0% 0%;*/
-    padding: 0 2% 0 0;
+    padding: 0 2% 0 2%;
     vertical-align: top;
     margin-bottom: 30px;
     -webkit-transition: all .7s;

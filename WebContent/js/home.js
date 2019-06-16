@@ -2,6 +2,7 @@
 
 /* edit semaphore */
 var editClick = true;
+var cookie = null;
 
 $( document ).ready(function() {
 	
@@ -37,7 +38,17 @@ $( document ).ready(function() {
 	
 	readVolumeAndNumber();
 	
+	/* GET COOKIE */
+	cookie = getCookie("token");
+	/* GET CONTROL */
+	checkAuthorization(cookie);
+	
 });
+
+function getCookie(name) {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+}
 
 /********************************* ARTICLE 1 ***************************/
 
@@ -516,7 +527,7 @@ $("#btnWrite9").click(function(){
 	$("img#img9").attr("src",$('div#upload9').text());
 	editClick = true;
 	
-});	
+});
 
 /* Send to DB the article */
 
@@ -526,6 +537,7 @@ function sendArticle(obj) {
 	
 	$.ajax({
 	    url : 'chargeDB',
+	    headers: { 'Authorization': "Bearer " + document.cookie.split("=")[1] },
 	    type : 'POST',
 	    dataType: 'json',
 	    contentType : 'application/json',
@@ -586,13 +598,6 @@ $("#images").on('click','.btnDelete',function(){
 });
 
 
-
-/* Turn Page */
-
-$("#btnTurn").click(function(){
-	readNewspaper($('.volume').text(), $('.number').text());
-});
-
 /* Publish */
 
 $("#btnPublish").click(function(){
@@ -614,11 +619,29 @@ $("#btnPublish").click(function(){
 	    async: false,
 	    data : JSON.stringify(obj)
 	}).done(function(response, data) {
-		readNewspaper($('.volume').text(), $('.number').text());
+		readNewspaper(volume, numero);
 	});
 });
 
-/* OnkeyDown press a combination of keyboard to edit the html */
+/* Turn Page */
+
+$("#btnTurn").click(function(){
+	readNewspaper($('.volume').text(), $('.number').text());
+});
+
+/* Logout */
+
+$("#btnLogout").click(function(){
+	/* Delete cookie */
+	document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	/* Reload the page */
+	document.location.reload(true)
+});
+
+/* GET COOKIE */
+function checkAuthorization(cookie) {
+if(cookie != null) {
+/* OnkeyDown press a combination of keyboard to edit the html
 
 function KeyPress(e) {
 	
@@ -626,6 +649,7 @@ function KeyPress(e) {
     		
     // Ability the editable property
     if ( keyboard.shiftKey && keyboard.keyCode == 77  ) { // shift + m
+    */
 		
     	$('#volume').css('background','#8ecfff');
     	$('#number').css('background','#8ecfff');
@@ -651,8 +675,11 @@ function KeyPress(e) {
 		$("#upload9Block").hide();
     }
     		
-    // Disability the editable property
+	if(cookie == null) {
+
+    /* Disability the editable property
     if (keyboard.ctrlKey && keyboard.keyCode == 90 ) {  // ctrl + z
+    */
     	
     	$('#volume').css('background','#f4f4f4');
     	$('#number').css('background','#f4f4f4');
@@ -719,7 +746,8 @@ function KeyPress(e) {
 		
 		/* Reset dirty setting unsaved on the newspaper */
 		readVolumeAndNumber();
-    }
+   // }
+}
 }
 /* Listener of the keyboard */
-document.onkeydown = KeyPress;
+//document.onkeydown = KeyPress;
