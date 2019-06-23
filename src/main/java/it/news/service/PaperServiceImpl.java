@@ -58,33 +58,45 @@ public class PaperServiceImpl implements PaperService {
 		
 		List<ArticleModel> listArticle = new ArrayList<ArticleModel>();
 		List<NewsEntity> artEn = repositoryNews.chargeArticles(obj.getVolume(), obj.getNumber());
-		ArticleModel am = new ArticleModel();
-		
-		if(!artEn.isEmpty()) {
-			for(NewsEntity ae : artEn) {
-				
-				// Set Articles
-				am.setArticle(ae.getArticle());
-				am.setTitle(ae.getTitle());
-				am.setSubtitle(ae.getSubtitle());
+		// Setting up of nine articles
+		for(int index = 0; index < 9; index++) {
+			int index_article = index + 1;
+			try {
+				NewsEntity ae = artEn.get(index);
+				// Filling article by position
+				if(ae.getArticle() == index_article) {
+					ArticleModel am = new ArticleModel();
+					
+					// Set Articles
+					am.setArticle(ae.getArticle());
+					am.setTitle(ae.getTitle());
+					am.setSubtitle(ae.getSubtitle());
+					
+					Paragraph par = new Paragraph();
+					par.setOne(ae.getP1());
+					par.setTwo(ae.getP2());
+					par.setThree(ae.getP3());
+					
+					am.addParagraph(par);
+					
+					am.setFigure(ae.getFigure());
+					am.setNameFigure(ae.getNameFigure());
+					am.setSign(ae.getSign());
+					
+					listArticle.add(am);
+				}
+			}catch(Exception ex) {
+				ArticleModel am = new ArticleModel();
+				am.setArticle(index_article);
 				
 				Paragraph par = new Paragraph();
-				par.setOne(ae.getP1());
-				par.setTwo(ae.getP2());
-				par.setThree(ae.getP3());
+				par.setOne("");
+				par.setTwo("");
+				par.setThree("");
 				
 				am.addParagraph(par);
-				
-				am.setFigure(ae.getFigure());
-				am.setNameFigure(ae.getNameFigure());
-				am.setSign(ae.getSign());
-				
 				listArticle.add(am);
 			}
-		}
-		else {
-			/* Initialize an empty article, otherwise is null and it doesn't show a empty page */
-			listArticle.add(am);
 		}
 		return listArticle;
 	}

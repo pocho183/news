@@ -750,7 +750,7 @@ function KeyPress(e) {
 		/* Da provare se non necessitiamo il reload*/
 		//readVolumeAndNumber();
    // }
-}
+   }
 }
 /* Listener of the keyboard */
 //document.onkeydown = KeyPress;

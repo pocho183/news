@@ -44,7 +44,7 @@ function readNewspaper(volume, numero) {
 		        publicArticle(article, item);
 		        break;
 		     }
-		 });
+		});
 
 		function publicArticle(article, item) {
 			
