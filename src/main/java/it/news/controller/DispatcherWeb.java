@@ -61,12 +61,12 @@ public class DispatcherWeb {
 		return new ResponseEntity<>(HttpStatus.OK);
     }
 	
-	@RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "*")
-	public ResponseEntity<Object> publish(@RequestBody VolumeAndNumber obj) {
+	public ResponseEntity<VolumeAndNumber> publish(@RequestBody VolumeAndNumber obj) {
 		logger.debug("Called Publish");
 		service.publish(obj);
-		return new ResponseEntity<Object>(null, HttpStatus.OK);
+		return new ResponseEntity<VolumeAndNumber>(obj,HttpStatus.OK);
     }
 	
 	@RequestMapping(value = "/listImages", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

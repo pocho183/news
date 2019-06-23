@@ -50,16 +50,7 @@ public class TokenHelper {
 	public String createToken(User user) {
 		Map<String, Object> claims = new HashMap<String, Object>();
 		claims.put("user", user);
-		logger.debug("Creating token ...................................................");
-		try {
-		String w = Jwts.builder().addClaims(claims).compact();
-		logger.debug("CREATED token ................................................... " + w);
-		return w;
-		}catch(Exception ex) {
-			ex.printStackTrace();
-			return "error";
-		}
-		//return Jwts.builder().setIssuer(APP_NAME).setSubject(user.getUsername()).addClaims(claims).setIssuedAt(generateCurrentDate()).setExpiration(generateExpirationDate()).signWith(SIGNATURE_ALGORITHM, TextCodec.BASE64.encode(SECRET)).compact();
+		return Jwts.builder().setIssuer(APP_NAME).setSubject(user.getUsername()).addClaims(claims).setIssuedAt(generateCurrentDate()).setExpiration(generateExpirationDate()).signWith(SIGNATURE_ALGORITHM, TextCodec.BASE64.encode(SECRET)).compact();
 	}
 
 	public Claims getClaimsFromToken(String token) {

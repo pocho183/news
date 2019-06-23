@@ -56,27 +56,34 @@ public class PaperServiceImpl implements PaperService {
 	@Override
 	public List<ArticleModel> readNewspaper(NumberModel obj) {
 		
-		List<ArticleModel> listArticle = new ArrayList<>();
-		List<NewsEntity> artEn = repositoryNews.findByArticle(obj.getVolume(), obj.getNumber());
-		for(NewsEntity ae : artEn) {
-			
-			ArticleModel am = new ArticleModel();
-			// Set Articles
-			am.setArticle(ae.getArticle());
-			am.setTitle(ae.getTitle());
-			am.setSubtitle(ae.getSubtitle());
-			
-			Paragraph par = new Paragraph();
-			par.setOne(ae.getP1());
-			par.setTwo(ae.getP2());
-			par.setThree(ae.getP3());
-			
-			am.addParagraph(par);
-			
-			am.setFigure(ae.getFigure());
-			am.setNameFigure(ae.getNameFigure());
-			am.setSign(ae.getSign());
-			
+		List<ArticleModel> listArticle = new ArrayList<ArticleModel>();
+		List<NewsEntity> artEn = repositoryNews.chargeArticles(obj.getVolume(), obj.getNumber());
+		ArticleModel am = new ArticleModel();
+		
+		if(!artEn.isEmpty()) {
+			for(NewsEntity ae : artEn) {
+				
+				// Set Articles
+				am.setArticle(ae.getArticle());
+				am.setTitle(ae.getTitle());
+				am.setSubtitle(ae.getSubtitle());
+				
+				Paragraph par = new Paragraph();
+				par.setOne(ae.getP1());
+				par.setTwo(ae.getP2());
+				par.setThree(ae.getP3());
+				
+				am.addParagraph(par);
+				
+				am.setFigure(ae.getFigure());
+				am.setNameFigure(ae.getNameFigure());
+				am.setSign(ae.getSign());
+				
+				listArticle.add(am);
+			}
+		}
+		else {
+			/* Initialize an empty article, otherwise is null and it doesn't show a empty page */
 			listArticle.add(am);
 		}
 		return listArticle;

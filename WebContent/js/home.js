@@ -547,6 +547,7 @@ function sendArticle(obj) {
 	});
 }
 
+
 /* Images ( browse images uploaded )*/
 
 function btnImages() {
@@ -609,7 +610,7 @@ $("#btnPublish").click(function(){
 			'volume' : volume,
 			'number' : numero,
 			'date' : date
-	}
+	};
 	
 	$.ajax({
 	    url : 'publish',
@@ -617,9 +618,10 @@ $("#btnPublish").click(function(){
 	    dataType: 'json',
 	    contentType : 'application/json',
 	    async: false,
-	    data : JSON.stringify(obj)
-	}).done(function(response, data) {
-		readNewspaper(volume, numero);
+	    data : JSON.stringify(obj),
+	    success: function (response, data) {
+	    	readNewspaper(volume, numero);
+	    }
 	});
 });
 
@@ -745,7 +747,8 @@ function KeyPress(e) {
 		editClick = true;
 		
 		/* Reset dirty setting unsaved on the newspaper */
-		readVolumeAndNumber();
+		/* Da provare se non necessitiamo il reload*/
+		//readVolumeAndNumber();
    // }
 }
 }

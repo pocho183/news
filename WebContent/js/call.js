@@ -367,33 +367,16 @@ $("#btnLogin").click(function(){
 	    type : 'POST',
 	    dataType: 'json',
 	    contentType : 'application/json',
-	    data : JSON.stringify(obj),
-	    
-	    
+	    data : JSON.stringify(obj),    
 	    success: function (response, data) {
 	    	/* With path, we declare which page is the owner of the token */
-			document.cookie = "token=" + data.token + "; path=/";
+	    	document.cookie = "token=" + response.token + "; path=/";
 			/* Redirect to home page */
 			window.location.href = "/";
-	      },
-	      error: function (xhr, ajaxOptions, thrownError) {
-	    	  //$('#errorLogin').css('dispaly','block');
-	    	  $('#errorLogin').show();
-	      }
-
-	/*
-	  })
-	  */
-	      /*
-	.done(function(data){
-		/* With path, we declare which page is the owner of the token 
-		document.cookie = "token=" + data.token + "; path=/";
-		/* Redirect to home page
-		window.location.href = "/";
-	})
-	.fail(function(errMsg) {
-  		$("errorLogin").css("dispaly","block");
-	    */
+	    },
+	    error: function (xhr, ajaxOptions, thrownError) {
+	    	$('#errorLogin').show();
+	    }
 	});
 });
 

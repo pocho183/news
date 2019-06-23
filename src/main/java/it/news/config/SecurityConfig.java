@@ -50,9 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-					.authorizeRequests().anyRequest().authenticated()
-					.and().formLogin().disable().anonymous().disable().csrf().disable().exceptionHandling()
-          .authenticationEntryPoint(authenticationEntryPoint).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		.authorizeRequests().anyRequest().authenticated()
+		.and().formLogin().disable().anonymous().disable().csrf().disable().exceptionHandling()
+        .authenticationEntryPoint(authenticationEntryPoint).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 	
 	@Autowired
@@ -62,6 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-	//	web.ignoring().antMatchers(HttpMethod.POST, "/login", "/authenticate").antMatchers(HttpMethod.GET, "/**").antMatchers(HttpMethod.OPTIONS, "/**");		
+		web.ignoring().antMatchers(HttpMethod.POST, "/login", "/authenticate").antMatchers(HttpMethod.GET, "/**").antMatchers(HttpMethod.OPTIONS, "/**");		
 	}
 }
