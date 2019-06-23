@@ -6,7 +6,7 @@ var cookie = null;
 
 $( document ).ready(function() {
 	
-	$(".data").text($.datepicker.formatDate('dd M yy', new Date()));
+	//$(".data").text($.datepicker.formatDate('dd M yy', new Date()));
 	$("#btnEdit1").hide();
 	$("#btnEdit2").hide();
 	$("#btnEdit3").hide();
@@ -605,7 +605,8 @@ $("#btnPublish").click(function(){
 	
 	var volume = $('.volume').text();
 	var numero = $('.number').text();
-	var date = $('.data').text();
+	var date = $.datepicker.formatDate('dd M yy', new Date());
+	
 	var obj = {
 			'volume' : volume,
 			'number' : numero,

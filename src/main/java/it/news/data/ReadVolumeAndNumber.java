@@ -29,6 +29,7 @@ public class ReadVolumeAndNumber {
 				edition = new VolumeAndNumber();
 				edition.setVolume(objEntity.getVolume());
 				edition.setNumber(objEntity.getNumero());
+				edition.setDate(objEntity.getDate());
 			}
 		}
 		/* At the first time start the DB, begin with number 1 volume 1*/
