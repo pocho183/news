@@ -48,6 +48,6 @@ public class SecurityController {
 	
 	    public LoginResponse(final String token) {
 	        this.token = token;
-	    }    
+	    }
 	}
 }

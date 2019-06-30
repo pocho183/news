@@ -555,7 +555,6 @@ $("#imagesList").empty()
 	
 	$.ajax({
 	    url : 'listImages',
-	    headers: { 'Authorization': "Bearer " + document.cookie.split("=")[1] },
 	    type : 'GET',
 	    dataType: 'json',
 	    contentType : 'application/json',
@@ -590,6 +589,7 @@ $("#images").on('click','.btnDelete',function(){
     $("#btnDeleteImage").click(function(){
     	$.ajax({
     	    url : 'deleteImage',
+    	    headers: { 'Authorization': "Bearer " + document.cookie.split("=")[1] },
     	    type : 'POST',
     	    dataType: 'json',
     	    contentType : 'application/json',
@@ -617,6 +617,7 @@ $("#btnPublish").click(function(){
 	$.ajax({
 	    url : 'publish',
 	    type : 'POST',
+	    headers: { 'Authorization': "Bearer " + document.cookie.split("=")[1] },
 	    dataType: 'json',
 	    contentType : 'application/json',
 	    async: false,

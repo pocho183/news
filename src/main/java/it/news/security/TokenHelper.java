@@ -76,7 +76,7 @@ public class TokenHelper {
 	}
 
 	public Boolean validateToken(String token, UserDetails userDetails) {
-		Account user = (Account)userDetails;
+		User user = (User)userDetails;
 		final String username = getUsernameFromToken(token);
 		return (username.equals(user.getUsername()) && !(isTokenExpired(token)));
 	}
