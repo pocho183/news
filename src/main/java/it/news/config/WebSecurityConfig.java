@@ -23,7 +23,7 @@ import it.news.security.TokenHelper;
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = TokenHelper.class)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private AuthenticationEntryPoint authenticationEntryPoint;
@@ -49,10 +49,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors().and().addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-		.authorizeRequests().anyRequest().authenticated()
-		.and().formLogin().disable().anonymous().disable().csrf().disable().exceptionHandling()
-        .authenticationEntryPoint(authenticationEntryPoint).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.cors()
+			.and()
+			.addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+			.authorizeRequests().anyRequest().authenticated()
+				.and()
+				.formLogin()
+	            	.loginPage("/login.html")
+	            	.permitAll()
+				.disable().csrf()
+				.disable().exceptionHandling()
+			.authenticationEntryPoint(authenticationEntryPoint)
+				.and()
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 	
 	@Autowired
@@ -62,6 +71,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers(HttpMethod.POST, "/login", "/authenticate").antMatchers(HttpMethod.GET, "/**").antMatchers(HttpMethod.OPTIONS, "/**");		
+		web.ignoring().antMatchers(HttpMethod.POST, "/readVolumeAndNumber", "/readArticle", "/postLogin").antMatchers(HttpMethod.GET, "/**").antMatchers(HttpMethod.OPTIONS, "/**");		
 	}
 }

@@ -555,6 +555,7 @@ $("#imagesList").empty()
 	
 	$.ajax({
 	    url : 'listImages',
+	    headers: { 'Authorization': "Bearer " + document.cookie.split("=")[1] },
 	    type : 'GET',
 	    dataType: 'json',
 	    contentType : 'application/json',

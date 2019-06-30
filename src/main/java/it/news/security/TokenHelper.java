@@ -14,7 +14,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.TextCodec;
-import it.news.controller.SecurityController;
 import it.news.security.model.Account;
 import it.news.security.model.User;
 
@@ -79,13 +78,7 @@ public class TokenHelper {
 	public Boolean validateToken(String token, UserDetails userDetails) {
 		Account user = (Account)userDetails;
 		final String username = getUsernameFromToken(token);
-		return (username.equals(user.getUsername()) && !(isTokenExpired(token))
-				/*
-				 * && !(this.
-				 * isCreatedBeforeLastPasswordReset(
-				 * created,
-				 * user.getLastPasswordReset()))
-				 */);
+		return (username.equals(user.getUsername()) && !(isTokenExpired(token)));
 	}
 
 	public Date getCreatedDateFromToken(String token) {

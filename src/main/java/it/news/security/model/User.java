@@ -9,7 +9,6 @@ public class User {
 	private String name;
 	private String surname;
 	private String email;
-	private List<String> functions = new ArrayList<String>();
 	
 	public String getUsername() {
 		return username;
@@ -17,15 +16,6 @@ public class User {
 	
 	public void setUsername(String username) {
 		this.username = username;
-	}
-	
-	public List<String> getFunctions() {
-		return functions;
-	}
-	
-	public void addFunction(String function) {
-		if(!functions.contains(function))
-			functions.add(function);
 	}
 
 	public String getName() {

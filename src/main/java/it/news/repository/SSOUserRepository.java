@@ -9,5 +9,7 @@ import it.news.domain.SSOUserEntity;
 public interface SSOUserRepository extends JpaRepository<SSOUserEntity, Long> {
 	
 	public SSOUserEntity findByUsernameAndPassword(String username, String password);
+	
+	public SSOUserEntity findByUsername(String username);
 
 }

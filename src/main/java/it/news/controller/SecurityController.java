@@ -41,17 +41,6 @@ public class SecurityController {
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	}
-	
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	@CrossOrigin(origins = "*")
-	public ResponseEntity<LoginResponse> authenticate(@RequestParam String token) {
-		User user = service.authenticate(token);
-		if(user != null) {
-			String jwtToken = tokenHelper.createToken(user);
-			return ResponseEntity.ok().body(new LoginResponse(jwtToken));
-		}
-		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-	}
 
 	private static class LoginResponse {
 		

@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import it.news.controller.SecurityController;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import it.news.domain.SSOUserEntity;
 import it.news.repository.SSOUserRepository;
+import it.news.security.model.Account;
 import it.news.security.model.User;
 
 @Service
@@ -20,8 +23,6 @@ public class SecurityService implements UserDetailsService {
 	
 	@Value(value = "${app.code}")
 	private String applicationCode;
-//	@Autowired
-//	private ObjectMapper objectMapper;
 	@Autowired
 	private SSOUserRepository repositorySSOUser;
 	
@@ -42,19 +43,6 @@ public class SecurityService implements UserDetailsService {
 		return null;
 	}
 	
-	public User authenticate(String token) {
-//		HttpUriRequest request = RequestBuilder.post(cameraSSO + "/authenticate").addParameter("token", token).addParameter("applicationCode", applicationCode).build();
-//		try {
-//			CloseableHttpResponse response = HttpClients.createDefault().execute(request);
-//			HttpEntity entity = response.getEntity();
-//			SSOUser remoteUser = objectMapper.readValue(entity.getContent(), SSOUser.class);
-//			return createUser(remoteUser);
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-		return null;
-	}
-	
 	private User createUser(SSOUser remoteUser) {
 		User user = new User();
 		user.setName(remoteUser.name);
@@ -65,18 +53,12 @@ public class SecurityService implements UserDetailsService {
 	}
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) {
-//		HttpUriRequest request = RequestBuilder.get(cameraSSO + "/load/" + username).build();
-//		try {
-//			CloseableHttpResponse response = HttpClients.createDefault().execute(request);
-//			HttpEntity entity = response.getEntity();
-//			SSOUser remoteUser = objectMapper.readValue(entity.getContent(), SSOUser.class);
-//			Account account = new Account(remoteUser.username, "", "");
-//			return account;
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-		return null;
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		SSOUserEntity credentials = repositorySSOUser.findByUsername(username);
+		if (credentials == null) {
+	        throw new UsernameNotFoundException(username);
+	    }
+	    return new Account(credentials.getUsername());
 	}
 	
 	public static class SSOUser {

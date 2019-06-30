@@ -1,6 +1,7 @@
 package it.news.security.model;
 
 import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,6 +11,12 @@ public class Account implements UserDetails {
 	private String username;
 	private String password;
 	private String authorities;
+	
+	
+//	public Account(String username) {
+//		super();
+//		this.username = username;
+//	}
 
 	public String getUsername() {
 		return username;
