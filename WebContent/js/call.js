@@ -62,16 +62,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh13').text(item.paragraph[0].three);
 			    $('div#upload1').text(item.figure);
 			    $('div#figcaption1').text(item.nameFigure);
-			    $('div#sign1').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign1').text(item.sign);	$('#twitter1').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
+		    	$('#facebook1').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());			
+			    if(item.figure != "")
 				    $("img#img1").attr("src",item.figure);
-			        $('#twitter1').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img1").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
-			        $('#facebook1').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img1").attr('src') + '&quote=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
-			    }else {
+				else
 			    	$("img#img1").css('display','none');
-			    	$('#twitter1').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
-			    	$('#facebook1').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
-			    }
 				break;
 				
 			case ('2'):
@@ -83,16 +79,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh23').text(item.paragraph[0].three);
 			    $('div#upload2').text(item.figure);
 			    $('div#figcaption2').text(item.nameFigure);
-			    $('div#sign2').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign2').text(item.sign); 	$('#twitter2').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
+		    	$('#facebook2').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());			    
+			    if(item.figure != "")
 				    $("img#img2").attr("src",item.figure);
-			        $('#twitter2').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img2").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
-			        $('#facebook2').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img2").attr('src') + '&quote=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
-			    }else {
+			    else
 			    	$("img#img2").css('display','none');
-			    	$('#twitter2').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
-			    	$('#facebook2').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
-			    }
 				break;
 				
 			case ('3'):
@@ -104,16 +96,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh33').text(item.paragraph[0].three);
 			    $('div#upload3').text(item.figure);
 			    $('div#figcaption3').text(item.nameFigure);
-			    $('div#sign3').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign3').text(item.sign);	$('#twitter3').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
+		    	$('#facebook3').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());			    
+			    if(item.figure != "")
 				    $("img#img3").attr("src",item.figure);
-			        $('#twitter3').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img3").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
-			        $('#facebook3').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img3").attr('src') + '&quote=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
-			    }else {
+				else
 			    	$("img#img3").css('display','none');
-			    	$('#twitter3').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
-			    	$('#facebook3').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
-			    }
 				break;
 				
 			case ('4'):
@@ -125,16 +113,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh43').text(item.paragraph[0].three);
 			    $('div#upload4').text(item.figure);
 			    $('div#figcaption4').text(item.nameFigure);
-			    $('div#sign4').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign4').text(item.sign);	$('#twitter4').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
+		    	$('#facebook4').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());			    
+			    if(item.figure != "")
 				    $("img#img4").attr("src",item.figure);
-			        $('#twitter4').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img4").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
-			        $('#facebook4').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img4").attr('src') + '&quote=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
-			    }else {
+				else
 			    	$("img#img4").css('display','none');
-			    	$('#twitter4').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
-			    	$('#facebook4').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
-			    }
 				break;
 				
 			case ('5'):
@@ -146,16 +130,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh53').text(item.paragraph[0].three);
 			    $('div#upload5').text(item.figure);
 			    $('div#figcaption5').text(item.nameFigure);
-			    $('div#sign5').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign5').text(item.sign); 	$('#twitter5').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
+		    	$('#facebook5').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());			    
+			    if(item.figure != "")
 				    $("img#img5").attr("src",item.figure);
-			        $('#twitter5').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img5").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
-			        $('#facebook5').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img5").attr('src') + '&quote=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
-			    }else {
+				else
 			    	$("img#img5").css('display','none');
-			    	$('#twitter5').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
-			    	$('#facebook5').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
-			    }
 				break;
 				
 			case ('6'):
@@ -167,16 +147,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh63').text(item.paragraph[0].three);
 			    $('div#upload6').text(item.figure);
 			    $('div#figcaption6').text(item.nameFigure);
-			    $('div#sign6').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign6').text(item.sign);	$('#twitter6').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
+		    	$('#facebook6').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());			    
+			    if(item.figure != "")
 				    $("img#img6").attr("src",item.figure);
-			        $('#twitter6').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img6").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
-			        $('#facebook6').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img6").attr('src') + '&quote=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
-			    }else {
+			    else
 			    	$("img#img6").css('display','none');
-			    	$('#twitter6').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
-			    	$('#facebook6').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
-			    }
 				break;
 				
 			case ('7'):
@@ -188,16 +164,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh73').text(item.paragraph[0].three);
 			    $('div#upload7').text(item.figure);
 			    $('div#figcaption7').text(item.nameFigure);
-			    $('div#sign7').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign7').text(item.sign);	$('#twitter7').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
+		    	$('#facebook7').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());			    
+			    if(item.figure != "")
 				    $("img#img7").attr("src",item.figure);
-			        $('#twitter7').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img7").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
-			        $('#facebook7').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img7").attr('src') + '&quote=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
-			    }else {
+				else
 			    	$("img#img7").css('display','none');
-			    	$('#twitter7').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
-			    	$('#facebook7').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
-			    }
 				break;
 				
 			case ('8'):
@@ -209,16 +181,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh83').text(item.paragraph[0].three);
 			    $('div#upload8').text(item.figure);
 			    $('div#figcaption8').text(item.nameFigure);
-			    $('div#sign8').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign8').text(item.sign);	$('#twitter8').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
+		    	$('#facebook8').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());				   
+			    if(item.figure != "")
 				    $("img#img8").attr("src",item.figure);
-			        $('#twitter8').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img8").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
-			        $('#facebook8').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img8").attr('src') + '&quote=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
-			    }else {
+				else
 			    	$("img#img8").css('display','none');
-			    	$('#twitter8').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
-			    	$('#facebook8').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
-			    }
 				break;
 				
 			case ('9'):
@@ -230,16 +198,12 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh93').text(item.paragraph[0].three);
 			    $('div#upload9').text(item.figure);
 			    $('div#figcaption9').text(item.nameFigure);
-			    $('div#sign9').text(item.sign);
-			    if(item.figure != "") {
+			    $('div#sign9').text(item.sign);	$('#twitter9').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
+		    	$('#facebook9').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
+			    if(item.figure != "")
 				    $("img#img9").attr("src",item.figure);
-			        $('#twitter9').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it/' + $("img#img9").attr('src') + '&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
-			        $('#facebook9').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it/' + $("img#img9").attr('src') + '&quote=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
-			    }else {
+				else
 			    	$("img#img9").css('display','none');
-			    	$('#twitter9').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
-			    	$('#facebook9').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
-			    }
 				break;
 				
 			default :

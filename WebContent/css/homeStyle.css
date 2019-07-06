@@ -9,6 +9,7 @@ body {
     font-size: 100px;	
     text-align: center;
     position: relative;
+    max-width: 100%;
 }
 
 .tooltiptext {
@@ -77,14 +78,6 @@ body {
 
 .overridePadding {
 	paddig-right: 0px !important;
-}
-
-.content{
-    /*font-size: 0;
-    line-height: 0;*/
-    word-spacing: -.31em;
-    display: inline-block;
-   /* margin-rigt:5px;*/
 }
 
 .collumn {
