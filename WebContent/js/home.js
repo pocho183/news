@@ -64,6 +64,7 @@ $("#btnEdit1").click(function(){
 		$("#upload1Block").show();
 		$('#upload1').css('background','#8ecfff');
 		$('#figcaption1').css('background','#8ecfaf');
+		$('#collumn1').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn1').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite1").show();
 		$("#btnClose1").show();
@@ -74,6 +75,7 @@ $("#btnClose1").click(function(){
 		$('#collumn1').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload1Block").hide();
 		$('#figcaption1').css('background','#f4f4f4');
+		$('#collumn1').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn1').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite1").hide();
 		$("#btnClose1").hide();
@@ -101,6 +103,7 @@ $("#btnWrite1").click(function(){
 	
 	$('#collumn1').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption1').css('background','#f4f4f4');
+	$('#collumn1').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn1').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite1").hide();
 	$("#btnClose1").hide();
@@ -119,6 +122,7 @@ $("#btnEdit2").click(function(){
 		$("#upload2Block").show();
 		$('#upload2').css('background','#8ecfff');
 		$('#figcaption2').css('background','#8ecfaf');
+		$('#collumn2').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn2').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite2").show();
 		$("#btnClose2").show();
@@ -129,6 +133,7 @@ $("#btnClose2").click(function(){
 		$('#collumn2').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload2Block").hide();
 		$('#figcaption2').css('background','#f4f4f4');
+		$('#collumn2').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn2').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite2").hide();
 		$("#btnClose2").hide();
@@ -156,6 +161,7 @@ $("#btnWrite2").click(function(){
 	
 	$('#collumn2').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption2').css('background','#f4f4f4');
+	$('#collumn2').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn2').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite2").hide();
 	$("#btnClose2").hide();
@@ -174,6 +180,7 @@ $("#btnEdit3").click(function(){
 		$("#upload3Block").show();
 		$('#upload3').css('background','#8ecfff');
 		$('#figcaption3').css('background','#8ecfaf');
+		$('#collumn3').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn3').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite3").show();
 		$("#btnClose3").show();
@@ -184,6 +191,7 @@ $("#btnClose3").click(function(){
 		$('#collumn3').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload3Block").hide();
 		$('#figcaption3').css('background','#f4f4f4');
+		$('#collumn3').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn3').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite3").hide();
 		$("#btnClose3").hide();
@@ -211,6 +219,7 @@ $("#btnWrite3").click(function(){
 	
 	$('#collumn3').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption3').css('background','#f4f4f4');
+	$('#collumn3').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn3').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite3").hide();
 	$("#btnClose3").hide();
@@ -229,6 +238,7 @@ $("#btnEdit4").click(function(){
 		$("#upload4Block").show();
 		$('#upload4').css('background','#8ecfff');
 		$('#figcaption4').css('background','#8ecfaf');
+		$('#collumn4').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn4').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite4").show();
 		$("#btnClose4").show();
@@ -239,6 +249,7 @@ $("#btnClose4").click(function(){
 		$('#collumn4').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload4Block").hide();
 		$('#figcaption4').css('background','#f4f4f4');
+		$('#collumn4').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn4').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite4").hide();
 		$("#btnClose4").hide();
@@ -266,6 +277,7 @@ $("#btnWrite4").click(function(){
 	
 	$('#collumn4').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption4').css('background','#f4f4f4');
+	$('#collumn4').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn4').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite4").hide();
 	$("#btnClose4").hide();
@@ -284,6 +296,7 @@ $("#btnEdit5").click(function(){
 		$("#upload5Block").show();
 		$('#upload5').css('background','#8ecfff');
 		$('#figcaption5').css('background','#8ecfaf');
+		$('#collumn5').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn5').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite5").show();
 		$("#btnClose5").show();
@@ -294,6 +307,7 @@ $("#btnClose5").click(function(){
 		$('#collumn5').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload5Block").hide();
 		$('#figcaption5').css('background','#f4f4f4');
+		$('#collumn5').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn5').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite5").hide();
 		$("#btnClose5").hide();
@@ -321,6 +335,7 @@ $("#btnWrite5").click(function(){
 	
 	$('#collumn5').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption5').css('background','#f4f4f4');
+	$('#collumn5').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn5').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite5").hide();
 	$("#btnClose5").hide();
@@ -339,6 +354,7 @@ $("#btnEdit6").click(function(){
 		$("#upload6Block").show();
 		$('#upload6').css('background','#8ecfff');
 		$('#figcaption6').css('background','#8ecfaf');
+		$('#collumn6').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn6').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite6").show();
 		$("#btnClose6").show();
@@ -349,6 +365,7 @@ $("#btnClose6").click(function(){
 		$('#collumn6').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload6Block").hide();
 		$('#figcaption6').css('background','#f4f4f4');
+		$('#collumn6').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn6').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite6").hide();
 		$("#btnClose6").hide();
@@ -376,6 +393,7 @@ $("#btnWrite6").click(function(){
 	
 	$('#collumn6').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption6').css('background','#f4f4f4');
+	$('#collumn6').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn6').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite6").hide();
 	$("#btnClose6").hide();
@@ -394,6 +412,7 @@ $("#btnEdit7").click(function(){
 		$("#upload7Block").show();
 		$('#upload7').css('background','#8ecfff');
 		$('#figcaption7').css('background','#8ecfaf');
+		$('#collumn7').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn7').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite7").show();
 		$("#btnClose7").show();
@@ -404,6 +423,7 @@ $("#btnClose7").click(function(){
 		$('#collumn7').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload7Block").hide();
 		$('#figcaption7').css('background','#f4f4f4');
+		$('#collumn7').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn7').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite7").hide();
 		$("#btnClose7").hide();
@@ -431,6 +451,7 @@ $("#btnWrite7").click(function(){
 	
 	$('#collumn7').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption7').css('background','#f4f4f4');
+	$('#collumn7').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn7').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite7").hide();
 	$("#btnClose7").hide();
@@ -449,6 +470,7 @@ $("#btnEdit8").click(function(){
 		$("#upload8Block").show();
 		$('#upload8').css('background','#8ecfff');
 		$('#figcaption8').css('background','#8ecfaf');
+		$('#collumn8').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn8').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite8").show();
 		$("#btnClose8").show();
@@ -459,6 +481,7 @@ $("#btnClose8").click(function(){
 		$('#collumn8').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload8Block").hide();
 		$('#figcaption8').css('background','#f4f4f4');
+		$('#collumn1').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn8').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite8").hide();
 		$("#btnClose8").hide();
@@ -486,6 +509,7 @@ $("#btnWrite8").click(function(){
 	
 	$('#collumn8').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption8').css('background','#f4f4f4');
+	$('#collumn8').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn8').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite8").hide();
 	$("#btnClose8").hide();
@@ -504,6 +528,7 @@ $("#btnEdit9").click(function(){
 		$("#upload9Block").show();
 		$('#upload9').css('background','#8ecfff');
 		$('#figcaption9').css('background','#8ecfaf');
+		$('#collumn9').children('.head').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$('#collumn9').children('div[contenteditable="false"]').attr('contenteditable', true);
 		$("#btnWrite9").show();
 		$("#btnClose9").show();
@@ -514,6 +539,7 @@ $("#btnClose9").click(function(){
 		$('#collumn9').children('div[contenteditable="true"]').css('background','#f4f4f4');
 		$("#upload9Block").hide();
 		$('#figcaption9').css('background','#f4f4f4');
+		$('#collumn9').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 		$('#collumn9').children('div[contenteditable="true"]').attr('contenteditable', false);	
 		$("#btnWrite9").hide();
 		$("#btnClose9").hide();
@@ -541,6 +567,7 @@ $("#btnWrite9").click(function(){
 	
 	$('#collumn9').children('div[contenteditable="true"]').css('background','#f4f4f4');
 	$('#figcaption9').css('background','#f4f4f4');
+	$('#collumn9').children('.head').children('div[contenteditable="true"]').attr('contenteditable', false);
 	$('#collumn9').children('div[contenteditable="true"]').attr('contenteditable', false);	
 	$("#btnWrite9").hide();
 	$("#btnClose9").hide();

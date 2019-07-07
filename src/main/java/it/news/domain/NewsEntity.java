@@ -105,7 +105,6 @@ private static final long serialVersionUID = -1692574369658447660L;
 	public void setNumbers(NumbersEntity numbers) {
 		this.numbers = numbers;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

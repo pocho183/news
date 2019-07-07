@@ -82,7 +82,6 @@ public class SSOUserEntity {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

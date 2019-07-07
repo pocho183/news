@@ -69,7 +69,6 @@ public class NumbersEntity {
 			this.news.add(news);
 		}
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
