@@ -187,6 +187,12 @@ div[contenteditable="false"]::selection {
    	background-color:#f9f9f9;
 }
 
+/* POP-UP List image */
+
+#previewImageContent {
+	height:50%;
+}
+
 /** POP-UP Upload **/
 
 #inputFile {
