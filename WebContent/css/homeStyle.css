@@ -98,7 +98,7 @@ body {
     hyphens: auto;
 	border-right: 1px solid #2f2f2f;
 	text-align: justify;
-	word-spacing:-3px;
+	word-spacing:2px;
 }
 
 .collumn .subheadline:before {
