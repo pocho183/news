@@ -27,5 +27,6 @@ $("#btn-save-upload").click(function() {
 		alert("Error! Upload failed. Can not connect to the server.");
 	};
 	xmlHTTP.open('POST', '/upload', true);
+	xmlHTTP.setRequestHeader("Authorization", "Bearer " + document.cookie.split("=")[1]);
 	xmlHTTP.send(formData);
 });
