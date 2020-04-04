@@ -62,18 +62,17 @@ body {
     box-sizing: border-box;
     padding: 10px 0 10px 0;
     line-height: 1.2;
-    word-spacing:-1px;
+    /*word-spacing:-1px;*/
 }
 
 .subheadline  {
-	/*font-family: 'Architex', serif;*/
 	font-family: 'Quikhand', serif;
     font-weight: 300;
     font-size: 20px;
     box-sizing: border-box;
     padding: 10px 0px 10px 0px;
     line-height: 1.2;
-    word-spacing:-1px;
+    /*word-spacing:-1px;*/
 }
 
 .overridePadding {
@@ -98,7 +97,7 @@ body {
     hyphens: auto;
 	border-right: 1px solid #2f2f2f;
 	text-align: justify;
-	word-spacing:2px;
+    word-spacing:1px;
 }
 
 .collumn .subheadline:before {
@@ -177,7 +176,10 @@ img {
 
 /* Change color if selected */
 
-div.head div[contenteditable="false"]::selection {
+div.head div[contenteditable="false"]::selection,
+.subhead::selection, .head::selection, 
+.subhead span::selection,
+.subhead span[contenteditable="false"]::selection {
 	color:skyblue;
    	background-color:#f9f9f9;
 }
