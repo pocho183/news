@@ -1,14 +1,11 @@
-package it.esinware.mapping.config;
+package it.news.mapping;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import it.esinware.mapping.annotation.FieldBinding;
-import it.esinware.mapping.annotation.FieldOverride;
-import it.esinware.mapping.annotation.Fields;
-import it.esinware.mapping.annotation.TypeBinding;
+
 import ma.glasnost.orika.CustomMapper;
 
 public class BeanWrapper {

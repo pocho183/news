@@ -1,9 +1,16 @@
 package it.news.model;
 
+import it.news.domain.NewsEntity;
+import it.news.mapping.FieldBinding;
+import it.news.mapping.TypeBinding;
+
+@TypeBinding(binding = NewsEntity.class)
 public class Paragraph {
-	
+	@FieldBinding(binding = "p1")
 	private String one;
+	@FieldBinding(binding = "p2")
 	private String two;
+	@FieldBinding(binding = "p3")
 	private String three;
 	
 	public String getOne() {

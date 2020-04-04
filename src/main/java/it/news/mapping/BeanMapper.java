@@ -1,4 +1,4 @@
-package it.esinware.mapping;
+package it.news.mapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +7,11 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import it.esinware.mapping.annotation.FieldBinding;
-import it.esinware.mapping.config.BeanWrapper;
-import it.esinware.mapping.config.MappingResolver;
-import it.esinware.mapping.orika.PlaceholderConverter;
-import it.esinware.mapping.orika.PlaceholderMapper;
+import org.springframework.stereotype.Component;
+
 import ma.glasnost.orika.Converter;
 import ma.glasnost.orika.Mapper;
 import ma.glasnost.orika.MapperFactory;
@@ -21,6 +19,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import ma.glasnost.orika.metadata.ClassMapBuilder;
 import ma.glasnost.orika.metadata.FieldMapBuilder;
 
+@Component
 public class BeanMapper {
 
 	private static Logger logger = LoggerFactory.getLogger(BeanMapper.class);

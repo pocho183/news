@@ -1,4 +1,4 @@
-package it.esinware.mapping.annotation;
+package it.news.mapping;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Retention;

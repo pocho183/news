@@ -3,6 +3,10 @@ package it.news.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.news.domain.NewsEntity;
+import it.news.mapping.TypeBinding;
+
+@TypeBinding(binding = NewsEntity.class)
 public class ArticleModel {
 	
 	private String volume;
@@ -70,6 +74,6 @@ public class ArticleModel {
 		this.sign = sign;
 	}	
 	public void addParagraph(Paragraph par) {
-			paragraph.add(par);
+		paragraph.add(par);
 	}
 }

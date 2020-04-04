@@ -1,4 +1,4 @@
-package it.esinware.mapping.annotation;
+package it.news.mapping;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

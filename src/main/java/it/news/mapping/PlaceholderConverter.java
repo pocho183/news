@@ -1,4 +1,4 @@
-package it.esinware.mapping.orika;
+package it.news.mapping;
 
 import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.MappingContext;

@@ -16,13 +16,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-
 @Configuration
 @EnableWebMvc
-@ComponentScan({ "it.news.controller", "it.news.service", "it.news.data" })
+@ComponentScan({ "it.news.controller", "it.news.service", "it.news.data", "it.news.mapping" })
 public class WebConfig implements WebMvcConfigurer {
 	
 	private Logger logger = LoggerFactory.getLogger(WebConfig.class);

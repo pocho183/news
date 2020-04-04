@@ -15,6 +15,7 @@ import it.news.data.PopulateDB;
 import it.news.data.Publish;
 import it.news.data.ReadVolumeAndNumber;
 import it.news.domain.NewsEntity;
+import it.news.mapping.BeanMapper;
 import it.news.model.ArticleModel;
 import it.news.model.NumberModel;
 import it.news.model.Paragraph;
@@ -37,6 +38,8 @@ public class PaperServiceImpl implements PaperService {
 	private Publish publish;
 	@Autowired
 	private NewsRepository repositoryNews;
+	@Autowired
+	BeanMapper beanMapper;
 	
 	@Override
 	public VolumeAndNumber readVolumeAndNumber() {
@@ -54,8 +57,7 @@ public class PaperServiceImpl implements PaperService {
 	
 	
 	@Override
-	public List<ArticleModel> readNewspaper(NumberModel obj) {
-		
+	public List<ArticleModel> readNewspaper(NumberModel obj) {		
 		List<ArticleModel> listArticle = new ArrayList<ArticleModel>();
 		List<NewsEntity> artEn = repositoryNews.chargeArticles(obj.getVolume(), obj.getNumber());
 		// Setting up of nine articles
@@ -66,34 +68,19 @@ public class PaperServiceImpl implements PaperService {
 				// Filling article by position
 				if(ae.getArticle() == index_article) {
 					ArticleModel am = new ArticleModel();
-					
-					// Set Articles
-					am.setArticle(ae.getArticle());
-					am.setTitle(ae.getTitle());
-					am.setSubtitle(ae.getSubtitle());
-					
 					Paragraph par = new Paragraph();
-					par.setOne(ae.getP1());
-					par.setTwo(ae.getP2());
-					par.setThree(ae.getP3());
-					
+					par = beanMapper.map(ae, Paragraph.class);
+					am = beanMapper.map(ae, ArticleModel.class);
 					am.addParagraph(par);
-					
-					am.setFigure(ae.getFigure());
-					am.setNameFigure(ae.getNameFigure());
-					am.setSign(ae.getSign());
-					
-					listArticle.add(am);
+					listArticle.add(am);				
 				}
 			}catch(Exception ex) {
 				ArticleModel am = new ArticleModel();
 				am.setArticle(index_article);
-				
 				Paragraph par = new Paragraph();
 				par.setOne("");
 				par.setTwo("");
 				par.setThree("");
-				
 				am.addParagraph(par);
 				listArticle.add(am);
 			}
@@ -102,10 +89,8 @@ public class PaperServiceImpl implements PaperService {
 	}
 	
 	@Override
-	public List<String> listImages() {
-		
-		List<String> list = new ArrayList<>();
-		
+	public List<String> listImages() {	
+		List<String> list = new ArrayList<>();	
 		File folder = new File(env.getProperty("path.images"));
         String[] files = folder.list();
 		for (String file : files)
@@ -114,8 +99,7 @@ public class PaperServiceImpl implements PaperService {
 	}
 	
 	@Override
-	public String deleteImage(String namePicture) {
-		
+	public String deleteImage(String namePicture) {		
 		String path = env.getProperty("path.images") + File.separator + namePicture;	
         File file = new File(path);
         if(file.delete()){

@@ -1,19 +1,18 @@
-package it.esinware.mapping.config;
+package it.news.mapping;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import io.github.classgraph.AnnotationInfo;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ClassInfo;
 import io.github.classgraph.ClassInfoList;
 import io.github.classgraph.ScanResult;
-import it.esinware.mapping.annotation.Mapping;
-import it.esinware.mapping.annotation.MappingConverter;
-import it.esinware.mapping.annotation.TypeBinding;
 
 public class MappingResolver {
 

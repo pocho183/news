@@ -1,11 +1,12 @@
-package it.esinware.mapping.annotation;
+package it.news.mapping;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-import it.esinware.mapping.orika.PlaceholderMapper;
+
 import ma.glasnost.orika.CustomMapper;
 
 @Retention(RUNTIME)
