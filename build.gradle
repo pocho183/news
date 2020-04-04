@@ -5,7 +5,7 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
-def environment = hasProperty('env') ? env : 'Test'
+def environment = hasProperty('env') ? env : 'test'
 
 ext.extProgram = new Properties()
 extProgram.load(file("etc/$environment/specific.properties").newReader())
