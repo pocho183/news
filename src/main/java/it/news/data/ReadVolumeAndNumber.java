@@ -23,7 +23,7 @@ public class ReadVolumeAndNumber {
 		List<NumbersEntity> topic = repositoryNewspaper.findByStatus(true);
 		VolumeAndNumber edition = null;
 
-		if(!topic.isEmpty()) {		
+		if(topic != null && !topic.isEmpty()) {		
 			/* Set Volume and number published */
 			for(NumbersEntity objEntity : topic) {			
 				edition = new VolumeAndNumber();

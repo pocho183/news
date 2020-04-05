@@ -78,7 +78,6 @@ dependencies {
 	/* Libraries for Bean Mapping */
 	compile group: 'io.github.classgraph', name: 'classgraph', version: '4.4.12'
 	compile group: 'ma.glasnost.orika', name: 'orika-core', version: '1.5.4'
-	
 	/* The JAXB APIs are considered to be Java EE APIs. In Java 11 they are completely removed from the JDK 
 	   We need to include manually, they are deprecated, I nneed these libraries to work with JWT libraries
 	   on Class it.news.security.TokenHelper */
