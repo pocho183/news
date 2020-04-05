@@ -5,6 +5,7 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
+
 def environment = hasProperty('env') ? env : 'test'
 
 ext.extProgram = new Properties()
@@ -43,8 +44,8 @@ eclipse {
 
 war {
     // Define the context root
-	baseName "/"
-	from "WebContent"
+	baseName "news"
+	//from "WebContent"
 }
 
 sourceSets {
