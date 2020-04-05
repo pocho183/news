@@ -45,7 +45,7 @@ eclipse {
 war {
     // Define the context root
 	baseName "news"
-	//from "WebContent"
+	from "WebContent"
 }
 
 sourceSets {
