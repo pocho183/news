@@ -62,7 +62,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh13').text(item.paragraph[0].three);
 			    $('div#upload1').text(item.figure);
 			    $('div#figcaption1').text(item.nameFigure);
-			    $('div#sign1').text(item.sign);	$('#twitter1').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
+			    $('div#sign1').text(item.sign);
+			    $('#twitter1').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());
 		    	$('#facebook1').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit1").text() + ' - ' + $("div.sub1").text());			
 			    if(item.figure != "")
 				    $("img#img1").attr("src",item.figure);
@@ -79,7 +80,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh23').text(item.paragraph[0].three);
 			    $('div#upload2').text(item.figure);
 			    $('div#figcaption2').text(item.nameFigure);
-			    $('div#sign2').text(item.sign); 	$('#twitter2').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
+			    $('div#sign2').text(item.sign); 	
+			    $('#twitter2').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());
 		    	$('#facebook2').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit2").text() + ' - ' + $("div.sub2").text());			    
 			    if(item.figure != "")
 				    $("img#img2").attr("src",item.figure);
@@ -96,7 +98,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh33').text(item.paragraph[0].three);
 			    $('div#upload3').text(item.figure);
 			    $('div#figcaption3').text(item.nameFigure);
-			    $('div#sign3').text(item.sign);	$('#twitter3').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
+			    $('div#sign3').text(item.sign);	
+			    $('#twitter3').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());
 		    	$('#facebook3').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit3").text() + ' - ' + $("div.sub3").text());			    
 			    if(item.figure != "")
 				    $("img#img3").attr("src",item.figure);
@@ -113,7 +116,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh43').text(item.paragraph[0].three);
 			    $('div#upload4').text(item.figure);
 			    $('div#figcaption4').text(item.nameFigure);
-			    $('div#sign4').text(item.sign);	$('#twitter4').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
+			    $('div#sign4').text(item.sign);	
+			    $('#twitter4').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());
 		    	$('#facebook4').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit4").text() + ' - ' + $("div.sub4").text());			    
 			    if(item.figure != "")
 				    $("img#img4").attr("src",item.figure);
@@ -130,7 +134,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh53').text(item.paragraph[0].three);
 			    $('div#upload5').text(item.figure);
 			    $('div#figcaption5').text(item.nameFigure);
-			    $('div#sign5').text(item.sign); 	$('#twitter5').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
+			    $('div#sign5').text(item.sign); 	
+			    $('#twitter5').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());
 		    	$('#facebook5').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit5").text() + ' - ' + $("div.sub5").text());			    
 			    if(item.figure != "")
 				    $("img#img5").attr("src",item.figure);
@@ -147,7 +152,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh63').text(item.paragraph[0].three);
 			    $('div#upload6').text(item.figure);
 			    $('div#figcaption6').text(item.nameFigure);
-			    $('div#sign6').text(item.sign);	$('#twitter6').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
+			    $('div#sign6').text(item.sign);	
+			    $('#twitter6').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());
 		    	$('#facebook6').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit6").text() + ' - ' + $("div.sub6").text());			    
 			    if(item.figure != "")
 				    $("img#img6").attr("src",item.figure);
@@ -164,7 +170,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh73').text(item.paragraph[0].three);
 			    $('div#upload7').text(item.figure);
 			    $('div#figcaption7').text(item.nameFigure);
-			    $('div#sign7').text(item.sign);	$('#twitter7').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
+			    $('div#sign7').text(item.sign);	
+			    $('#twitter7').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());
 		    	$('#facebook7').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit7").text() + ' - ' + $("div.sub7").text());			    
 			    if(item.figure != "")
 				    $("img#img7").attr("src",item.figure);
@@ -181,7 +188,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh83').text(item.paragraph[0].three);
 			    $('div#upload8').text(item.figure);
 			    $('div#figcaption8').text(item.nameFigure);
-			    $('div#sign8').text(item.sign);	$('#twitter8').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
+			    $('div#sign8').text(item.sign);	
+			    $('#twitter8').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());
 		    	$('#facebook8').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit8").text() + ' - ' + $("div.sub8").text());				   
 			    if(item.figure != "")
 				    $("img#img8").attr("src",item.figure);
@@ -198,7 +206,8 @@ function readNewspaper(volume, numero) {
 			    $('div.paragragh93').text(item.paragraph[0].three);
 			    $('div#upload9').text(item.figure);
 			    $('div#figcaption9').text(item.nameFigure);
-			    $('div#sign9').text(item.sign);	$('#twitter9').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
+			    $('div#sign9').text(item.sign);	
+			    $('#twitter9').attr('href', 'https://twitter.com/intent/tweet?url=https://seriebi.it&amp;via=seriebi;hashtags=seriebi;text=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
 		    	$('#facebook9').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=https://seriebi.it&quote=' + $("div.tit9").text() + ' - ' + $("div.sub9").text());
 			    if(item.figure != "")
 				    $("img#img9").attr("src",item.figure);
