@@ -1,7 +1,6 @@
 package it.news.config;
 
 import java.util.Properties;
-import java.util.logging.Level;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.spi.PersistenceProvider;
