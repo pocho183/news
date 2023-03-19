@@ -635,8 +635,7 @@ $("#imagesList").empty()
 	    dataType: 'json',
 	    contentType : 'application/json',
 	    async: false
-	}).done(function(response, data) {
-		
+	}).done(function(response, data) {	
 		for (var i = 0; i < response.length; i++) {
 			$("#imagesList").append('<tr><td>' + i + '</td><td>' + response[i] + 
 				'</td><td style="cursor: pointer;"><button style="cursor: pointer;" class="btnView" data-toggle="modal" data-target="#previewModal"><i class="fas fa-image mr-2 grey-text" aria-hidden="true"></i></button></td>'+
@@ -652,7 +651,7 @@ $("#images").on('click','.btnView',function(){
     var currentRow=$(this).closest("tr");
     var namePicture=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
     // Preview
-    $("img#previewImage").attr("src", 'images/' + namePicture);
+    $("img#previewImage").attr("src", 'img/' + namePicture);
 });
 
 /* Delete Images */
